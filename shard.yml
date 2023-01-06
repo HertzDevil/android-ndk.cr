@@ -1,0 +1,9 @@
+name: android_ndk
+version: 0.0.1
+
+authors:
+  - Quinton Miller <nicetas.c@gmail.com>
+
+crystal: 1.6.0
+
+license: MIT
