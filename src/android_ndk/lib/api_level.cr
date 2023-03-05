@@ -6,7 +6,9 @@ module AndroidNDK
   lib Lib
     ANDROID_API_FUTURE = 10000
 
-    ANDROID_API = 24
+    {% begin %}
+      ANDROID_API = {{ LibC::ANDROID_API }}
+    {% end %}
 
     ANDROID_API_G     =  9
     ANDROID_API_I     = 14

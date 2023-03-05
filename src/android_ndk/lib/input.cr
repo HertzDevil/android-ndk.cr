@@ -227,7 +227,7 @@ module AndroidNDK
     fun AKeyEvent_getDownTime(key_event : AInputEvent*) : Int64
     fun AKeyEvent_getEventTime(key_event : AInputEvent*) : Int64
     {% if ANDROID_API >= 31 %}
-      fun AKeyEvent_fromJava(env : JNIEnv*, keyEvent : JObject) : AInputEvent*
+      fun AKeyEvent_fromJava(env : LibJNI::Env*, keyEvent : LibJNI::JObject) : AInputEvent*
     {% end %}
 
     fun AMotionEvent_getAction(motion_event : AInputEvent*) : Int32
@@ -275,7 +275,7 @@ module AndroidNDK
       fun AMotionEvent_getClassification(motion_event : AInputEvent*) : Int32
     {% end %}
     {% if ANDROID_API >= 31 %}
-      fun AMotionEvent_fromJava(env : JNIEnv*, motionEvent : JObject) : AInputEvent*
+      fun AMotionEvent_fromJava(env : LibJNI::Env*, motionEvent : LibJNI::JObject) : AInputEvent*
     {% end %}
 
     alias AInputQueue = Void
@@ -287,7 +287,7 @@ module AndroidNDK
     fun AInputQueue_preDispatchEvent(queue : AInputQueue*, event : AInputEvent*) : Int32
     fun AInputQueue_finishEvent(queue : AInputQueue*, event : AInputEvent*, handled : Int)
     {% if ANDROID_API >= 33 %}
-      fun AInputQueue_fromJava(env : JNIEnv*, inputQueue : JObject) : AInputQueue*
+      fun AInputQueue_fromJava(env : LibJNI::Env*, inputQueue : LibJNI::JObject) : AInputQueue*
     {% end %}
   end
 end

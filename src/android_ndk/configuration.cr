@@ -533,7 +533,7 @@ class AndroidNDK::Configuration
 
   # Returns the current `ScreenRound` set in the configuration.
   #
-  # Returns `nil` before API level 30.
+  # Returns `nil` below API level 30.
   def screen_round : ScreenRound?
     {% if API_LEVEL >= 30 %}
       value = Lib.AConfiguration_getScreenRound(self)
@@ -633,7 +633,7 @@ class AndroidNDK::Configuration
 
   # Returns the current `LayoutDirection` set in the configuration.
   #
-  # Returns `nil` before API level 17.
+  # Returns `nil` below API level 17.
   def layout_direction : LayoutDirection?
     {% if API_LEVEL >= 17 %}
       value = Lib.AConfiguration_getLayoutDirection(self)
@@ -643,7 +643,7 @@ class AndroidNDK::Configuration
 
   # Sets the current layout direction in the configuration.
   #
-  # Has no effect before API level 17.
+  # Has no effect below API level 17.
   def layout_direction=(layout_direction : LayoutDirection?) : LayoutDirection?
     {% if API_LEVEL >= 17 %}
       value = layout_direction ? layout_direction.value : Lib::ACONFIGURATION_LAYOUTDIR_ANY
